@@ -11,12 +11,50 @@
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="https://unpkg.com/normalize.css@7.0.0">
+  <style>
+    .list-inline {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .list-inline-item {
+      display: inline-block;
+    }
+
+    .list-inline-item:not(:last-child) {
+      margin-right: 3em;
+    }
+  </style>
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">
+    <header>
+      <h1>@scriptdaemon</h1>
+      <nav>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <router-link to="/page1">Page 1</router-link>
+          </li>
+          <li class="list-inline-item">
+            <router-link to="/page2">Page 2</router-link>
+          </li>
+          <li class="list-inline-item">
+            <router-link to="/page3">Page 3</router-link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <router-view></router-view>
+  </div>
 
   <script src="https://unpkg.com/vue@2.5.2/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.min.js"></script>
   <script>
+    const page1 = { template: '<h2>Page 1</h2>' }
+    const page2 = { template: '<h2>Page 2</h2>' }
+    const page3 = { template: '<h2>Page 3</h2>' }
+
     const app = new Vue({
       el: '#app',
       methods: {
@@ -26,7 +64,15 @@
         nextPage () {
           console.log('Navigate: right.')
         }
-      }
+      },
+      router: new VueRouter({
+        routes: [
+          { path: '*', redirect: '/page1' },
+          { path: '/page1', component: page1 },
+          { path: '/page2', component: page2 },
+          { path: '/page3', component: page3 }
+        ]
+      })
     })
 
     window.addEventListener('keydown', (event) => {
