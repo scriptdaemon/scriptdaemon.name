@@ -24,6 +24,24 @@
     .list-inline-item:not(:last-child) {
       margin-right: 3em;
     }
+
+    .slide {
+      position: absolute;
+      transition: 0.75s;
+    }
+
+    .slide-left-enter,
+    .slide-left-leave-to {
+      opacity: 0;
+    }
+
+    .slide-left-enter {
+      transform: translate(100%, 0);
+    }
+
+    .slide-left-leave-to {
+      transform: translate(-100%, 0);
+    }
   </style>
 </head>
 <body>
@@ -45,7 +63,9 @@
       </nav>
     </header>
 
-    <router-view></router-view>
+    <transition name="slide-left">
+      <router-view class="slide"></router-view>
+    </transition>
   </div>
 
   <script src="https://unpkg.com/vue@2.5.2/dist/vue.min.js"></script>
@@ -67,10 +87,10 @@
       },
       router: new VueRouter({
         routes: [
-          { path: '*', redirect: '/page1' },
           { path: '/page1', component: page1 },
           { path: '/page2', component: page2 },
-          { path: '/page3', component: page3 }
+          { path: '/page3', component: page3 },
+          { path: '*', redirect: '/page1' }
         ]
       })
     })
