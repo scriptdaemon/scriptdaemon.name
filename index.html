@@ -12,6 +12,27 @@
 
   <link rel="stylesheet" href="https://unpkg.com/normalize.css@7.0.0">
   <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+
     .list-inline {
       padding-left: 0;
       list-style: none;
@@ -64,16 +85,34 @@
     </header>
 
     <transition name="slide-left">
-      <router-view class="slide"></router-view>
+      <router-view></router-view>
     </transition>
   </div>
 
   <script src="https://unpkg.com/vue@2.5.2/dist/vue.min.js"></script>
   <script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.min.js"></script>
   <script>
-    const page1 = { template: '<h2>Page 1</h2>' }
-    const page2 = { template: '<h2>Page 2</h2>' }
-    const page3 = { template: '<h2>Page 3</h2>' }
+    const page1 = {
+      template: `
+        <section class="slide">
+          <h2>Page 1</h2>
+        </section>
+      `
+    }
+    const page2 = {
+      template: `
+        <section class="slide">
+          <h2>Page 2</h2>
+        </section>
+      `
+    }
+    const page3 = {
+      template: `
+        <section class="slide">
+          <h2>Page 3</h2>
+        </section>
+      `
+    }
 
     const app = new Vue({
       el: '#app',
