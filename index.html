@@ -46,22 +46,30 @@
       margin-right: 3em;
     }
 
-    .slide {
-      position: absolute;
-      transition: 0.75s;
+    .router-link-active {
+      text-decoration: none;
     }
 
+    .slide {
+      position: absolute;
+      transition: 1s;
+    }
+
+    .slide-right-enter,
+    .slide-right-leave-to,
     .slide-left-enter,
     .slide-left-leave-to {
       opacity: 0;
     }
 
-    .slide-left-enter {
-      transform: translate(100%, 0);
-    }
-
+    .slide-right-enter,
     .slide-left-leave-to {
       transform: translate(-100%, 0);
+    }
+
+    .slide-right-leave-to,
+    .slide-left-enter {
+      transform: translate(100%, 0);
     }
   </style>
 </head>
@@ -118,10 +126,10 @@
       el: '#app',
       methods: {
         prevPage () {
-          console.log('Navigate: left.')
+          console.log('Navigate: previous page')
         },
         nextPage () {
-          console.log('Navigate: right.')
+          console.log('Navigate: next page')
         }
       },
       router: new VueRouter({
@@ -131,7 +139,12 @@
           { path: '/page3', component: page3 },
           { path: '*', redirect: '/page1' }
         ]
-      })
+      }),
+      watch: {
+        $route (to, from) {
+          console.log('Watch: $route')
+        }
+      }
     })
 
     window.addEventListener('keydown', (event) => {
