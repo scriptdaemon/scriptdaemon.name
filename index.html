@@ -83,20 +83,14 @@
       <h1>@scriptdaemon</h1>
       <nav>
         <ul class="list-inline">
-          <li class="list-inline-item">
-            <router-link to="/page1">Page 1</router-link>
-          </li>
-          <li class="list-inline-item">
-            <router-link to="/page2">Page 2</router-link>
-          </li>
-          <li class="list-inline-item">
-            <router-link to="/page3">Page 3</router-link>
+          <li class="list-inline-item" v-for="route in routes" v-if="route.name">
+            <router-link :to="route.path">{{ route.name }}</router-link>
           </li>
         </ul>
       </nav>
     </header>
 
-    <transition name="slide-left">
+    <transition :name="transition">
       <router-view></router-view>
     </transition>
   </div>
@@ -128,25 +122,38 @@
 
     const app = new Vue({
       el: '#app',
+      data () {
+        return {
+          routes: this.$router.options.routes,
+          transition: 'slide-left'
+        }
+      },
       methods: {
-        prevPage () {
+        getRouteIndex (route) {
+          return route.name
+            ? this.routes.findIndex(r => route.name === r.name)
+            : -1
+        },
+        toPrevPage () {
           console.log('Navigate: previous page')
         },
-        nextPage () {
+        toNextPage () {
           console.log('Navigate: next page')
         }
       },
       router: new VueRouter({
         routes: [
-          { path: '/page1', component: page1 },
-          { path: '/page2', component: page2 },
-          { path: '/page3', component: page3 },
+          { name: 'Page 1', path: '/page1', component: page1 },
+          { name: 'Page 2', path: '/page2', component: page2 },
+          { name: 'Page 3', path: '/page3', component: page3 },
           { path: '*', redirect: '/page1' }
         ]
       }),
       watch: {
         $route (to, from) {
-          console.log('Watch: $route')
+          this.transition = this.getRouteIndex(to) < this.getRouteIndex(from)
+            ? 'slide-right'
+            : 'slide-left'
         }
       }
     })
@@ -155,11 +162,11 @@
       switch (event.keyCode) {
         case 37: // Left
         case 38: // Up
-          app.prevPage()
+          app.toPrevPage()
           break
         case 39: // Right
         case 40: // Down
-          app.nextPage()
+          app.toNextPage()
           break
         default:
           // Do nothing
