@@ -46,8 +46,10 @@
       display: inline-block;
     }
 
-    .list-inline-item:not(:last-child) {
-      margin-right: 3em;
+    .list-inline-item:not(:last-child)::after {
+      padding-right: .5em;
+      padding-left: .5em;
+      content: '/';
     }
 
     .router-link-active {
