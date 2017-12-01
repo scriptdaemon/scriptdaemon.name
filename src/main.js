@@ -13,9 +13,9 @@ const app = new Vue({
   render: h => h(App),
   router: new VueRouter({
     routes: [
-      { name: 'Page 1', path: '/page1', component: Page1 },
-      { name: 'Page 2', path: '/page2', component: Page2 },
-      { name: 'Page 3', path: '/page3', component: Page3 },
+      { path: '/page1', component: Page1 },
+      { path: '/page2', component: Page2 },
+      { path: '/page3', component: Page3 },
       { path: '*', redirect: '/page1' }
     ]
   })

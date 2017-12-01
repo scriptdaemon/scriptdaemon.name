@@ -416,9 +416,9 @@ const app = new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */]({
   render: h => h(__WEBPACK_IMPORTED_MODULE_2__app__["a" /* default */]),
   router: new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
     routes: [
-      { name: 'Page 1', path: '/page1', component: __WEBPACK_IMPORTED_MODULE_3__pages_page1__["a" /* default */] },
-      { name: 'Page 2', path: '/page2', component: __WEBPACK_IMPORTED_MODULE_4__pages_page2__["a" /* default */] },
-      { name: 'Page 3', path: '/page3', component: __WEBPACK_IMPORTED_MODULE_5__pages_page3__["a" /* default */] },
+      { path: '/page1', component: __WEBPACK_IMPORTED_MODULE_3__pages_page1__["a" /* default */] },
+      { path: '/page2', component: __WEBPACK_IMPORTED_MODULE_4__pages_page2__["a" /* default */] },
+      { path: '/page3', component: __WEBPACK_IMPORTED_MODULE_5__pages_page3__["a" /* default */] },
       { path: '*', redirect: '/page1' }
     ]
   })
@@ -11647,6 +11647,12 @@ module.exports = function listToStyles (parentId, list) {
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: 'app',
@@ -11658,9 +11664,7 @@ module.exports = function listToStyles (parentId, list) {
   },
   methods: {
     getRouteIndex (route) {
-      return route.name
-        ? this.routes.findIndex(r => route.name === r.name)
-        : -1
+      return this.routes.findIndex(r => route.path === r.path);
     },
     toPrevPage () {
       console.log('Navigate: previous page')
@@ -11696,24 +11700,40 @@ var render = function() {
         _c("h1", [_vm._v("@scriptdaemon")]),
         _vm._v(" "),
         _c("nav", [
-          _c(
-            "ul",
-            { staticClass: "list-inline" },
-            _vm._l(_vm.routes, function(route) {
-              return route.name
-                ? _c(
-                    "li",
-                    { key: route.path, staticClass: "list-inline-item" },
-                    [
-                      _c("router-link", { attrs: { to: route.path } }, [
-                        _vm._v(_vm._s(route.name))
-                      ])
-                    ],
-                    1
-                  )
-                : _vm._e()
-            })
-          )
+          _c("ul", { staticClass: "list-inline" }, [
+            _c(
+              "li",
+              { staticClass: "list-inline-item" },
+              [
+                _c("router-link", { attrs: { to: "/page1" } }, [
+                  _vm._v("Page 1")
+                ])
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              { staticClass: "list-inline-item" },
+              [
+                _c("router-link", { attrs: { to: "/page2" } }, [
+                  _vm._v("Page 2")
+                ])
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              { staticClass: "list-inline-item" },
+              [
+                _c("router-link", { attrs: { to: "/page3" } }, [
+                  _vm._v("Page 3")
+                ])
+              ],
+              1
+            )
+          ])
         ])
       ]),
       _vm._v(" "),

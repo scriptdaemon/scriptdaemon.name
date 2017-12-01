@@ -3,11 +3,17 @@
     <header>
       <h1>@scriptdaemon</h1>
       <nav>
-        <!-- Use router-link component for navigation. -->
+        <!-- Use router-link components for navigation. -->
         <!-- `<router-link>` will be rendered as an `<a>` tag by default. -->
         <ul class="list-inline">
-          <li class="list-inline-item" v-for="route in routes" v-if="route.name" :key="route.path">
-            <router-link :to="route.path">{{ route.name }}</router-link>
+          <li class="list-inline-item">
+            <router-link to="/page1">Page 1</router-link>
+          </li>
+          <li class="list-inline-item">
+            <router-link to="/page2">Page 2</router-link>
+          </li>
+          <li class="list-inline-item">
+            <router-link to="/page3">Page 3</router-link>
           </li>
         </ul>
       </nav>
@@ -31,9 +37,7 @@ export default {
   },
   methods: {
     getRouteIndex (route) {
-      return route.name
-        ? this.routes.findIndex(r => route.name === r.name)
-        : -1
+      return this.routes.findIndex(r => route.path === r.path);
     },
     toPrevPage () {
       console.log('Navigate: previous page')
