@@ -11655,22 +11655,11 @@ module.exports = function listToStyles (parentId, list) {
 //
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  name: 'app',
+  name: 'App',
   data () {
     return {
       routes: this.$router.options.routes,
       transition: 'slide-left'
-    }
-  },
-  methods: {
-    getRouteIndex (route) {
-      return this.routes.findIndex(r => route.path === r.path);
-    },
-    toPrevPage () {
-      console.log('Navigate: previous page')
-    },
-    toNextPage () {
-      console.log('Navigate: next page')
     }
   },
   watch: {
@@ -11678,6 +11667,17 @@ module.exports = function listToStyles (parentId, list) {
       this.transition = this.getRouteIndex(to) < this.getRouteIndex(from)
         ? 'slide-right'
         : 'slide-left'
+    }
+  },
+  methods: {
+    getRouteIndex (route) {
+      return this.routes.findIndex(r => route.path === r.path)
+    },
+    toPrevPage () {
+      console.log('Navigate: previous page')
+    },
+    toNextPage () {
+      console.log('Navigate: next page')
     }
   }
 });
@@ -11822,7 +11822,7 @@ if (false) {(function () {
 //
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  name: 'page1'
+  name: 'Page1'
 });
 
 
@@ -11921,7 +11921,7 @@ if (false) {(function () {
 //
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  name: 'page2'
+  name: 'Page2'
 });
 
 
@@ -12020,7 +12020,7 @@ if (false) {(function () {
 //
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  name: 'page3'
+  name: 'Page3'
 });
 
 
