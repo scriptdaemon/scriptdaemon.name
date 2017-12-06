@@ -47,9 +47,11 @@ export default {
       return this.routes.findIndex(r => route.path === r.path)
     },
     toPrevPage () {
+      // eslint-disable-next-line
       console.log('Navigate: previous page')
     },
     toNextPage () {
+      // eslint-disable-next-line
       console.log('Navigate: next page')
     }
   }
