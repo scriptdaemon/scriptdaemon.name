@@ -1,5 +1,7 @@
 # scriptdaemon.me
 
+[![Continuous Integration][ci-img]][ci-url]
+
 [@scriptdaemon][github-url]'s domain.
 
 ## Description
@@ -12,3 +14,5 @@ However, if I decide to implement something particularly clever, I may describe
 my methods here for those interested.
 
 [github-url]: https://github.com/scriptdaemon
+[ci-img]: https://travis-ci.org/scriptdaemon/scriptdaemon.github.io.svg
+[ci-url]: https://travis-ci.org/scriptdaemon/scriptdaemon.github.io
