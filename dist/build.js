@@ -416,9 +416,9 @@ const app = new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */]({
   render: h => h(__WEBPACK_IMPORTED_MODULE_2__app__["a" /* default */]),
   router: new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
     routes: [
-      { path: '/page1', component: __WEBPACK_IMPORTED_MODULE_3__pages_page1__["a" /* default */] },
-      { path: '/page2', component: __WEBPACK_IMPORTED_MODULE_4__pages_page2__["a" /* default */] },
-      { path: '/page3', component: __WEBPACK_IMPORTED_MODULE_5__pages_page3__["a" /* default */] },
+      { path: '/page1', component: __WEBPACK_IMPORTED_MODULE_3__pages_page1__["a" /* default */], meta: { index: 0 } },
+      { path: '/page2', component: __WEBPACK_IMPORTED_MODULE_4__pages_page2__["a" /* default */], meta: { index: 1 } },
+      { path: '/page3', component: __WEBPACK_IMPORTED_MODULE_5__pages_page3__["a" /* default */], meta: { index: 2 } },
       { path: '*', redirect: '/page1' }
     ]
   })
@@ -11658,21 +11658,17 @@ module.exports = function listToStyles (parentId, list) {
   name: 'App',
   data () {
     return {
-      routes: this.$router.options.routes,
       transition: 'slide-left'
     }
   },
   watch: {
     $route (to, from) {
-      this.transition = this.getRouteIndex(to) < this.getRouteIndex(from)
+      this.transition = to.meta.index < from.meta.index
         ? 'slide-right'
         : 'slide-left'
     }
   },
   methods: {
-    getRouteIndex (route) {
-      return this.routes.findIndex(r => route.path === r.path)
-    },
     toPrevPage () {
       // eslint-disable-next-line
       console.log('Navigate: previous page')

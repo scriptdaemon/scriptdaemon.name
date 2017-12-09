@@ -31,21 +31,17 @@ export default {
   name: 'App',
   data () {
     return {
-      routes: this.$router.options.routes,
       transition: 'slide-left'
     }
   },
   watch: {
     $route (to, from) {
-      this.transition = this.getRouteIndex(to) < this.getRouteIndex(from)
+      this.transition = to.meta.index < from.meta.index
         ? 'slide-right'
         : 'slide-left'
     }
   },
   methods: {
-    getRouteIndex (route) {
-      return this.routes.findIndex(r => route.path === r.path)
-    },
     toPrevPage () {
       // eslint-disable-next-line
       console.log('Navigate: previous page')
