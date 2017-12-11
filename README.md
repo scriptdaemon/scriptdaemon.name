@@ -1,6 +1,7 @@
 # scriptdaemon.me
 
 [![Continuous Integration][ci-img]][ci-url]
+[![Dependencies][deps-img]][deps-url]
 
 [@scriptdaemon][github-url]'s domain.
 
@@ -16,3 +17,5 @@ my methods here for those interested.
 [github-url]: https://github.com/scriptdaemon
 [ci-img]: https://travis-ci.org/scriptdaemon/scriptdaemon.github.io.svg
 [ci-url]: https://travis-ci.org/scriptdaemon/scriptdaemon.github.io
+[deps-img]: https://david-dm.org/scriptdaemon/scriptdaemon.github.io.svg
+[deps-url]: https://david-dm.org/scriptdaemon/scriptdaemon.github.io
