@@ -1,5 +1,7 @@
 # scriptdaemon.me
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/scriptdaemon/scriptdaemon.github.io.svg)](https://greenkeeper.io/)
+
 [![Continuous Integration][ci-img]][ci-url]
 
 [@scriptdaemon][github-url]'s domain.
