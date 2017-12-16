@@ -40,16 +40,6 @@ export default {
         ? 'slide-right'
         : 'slide-left'
     }
-  },
-  methods: {
-    toPrevPage () {
-      // eslint-disable-next-line
-      console.log('Navigate: previous page')
-    },
-    toNextPage () {
-      // eslint-disable-next-line
-      console.log('Navigate: next page')
-    }
   }
 }
 </script>

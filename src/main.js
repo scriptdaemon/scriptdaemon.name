@@ -9,7 +9,6 @@ import Page3 from './pages/page3'
 Vue.use(VueRouter)
 
 const app = new Vue({
-  el: '#app',
   render: h => h(App),
   router: new VueRouter({
     routes: [
@@ -21,17 +20,8 @@ const app = new Vue({
   })
 })
 
-window.addEventListener('keydown', (event) => {
-  switch (event.keyCode) {
-    case 37: // Left
-    case 38: // Up
-      app.toPrevPage()
-      break
-    case 39: // Right
-    case 40: // Down
-      app.toNextPage()
-      break
-    default:
-      // Do nothing
-  }
-})
+// This is only to keep the linter happy. If I use the `el` property, then I'd
+// get either one of two linting errors: `no-new` if I don't assign the root Vue
+// instance to a variable, or `no-unused-vars` if I set it to a variable but
+// don't use it.
+app.$mount('#app')
