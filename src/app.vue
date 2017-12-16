@@ -45,6 +45,8 @@ export default {
 </script>
 
 <style>
+@import '~bulma';
+
 .list-inline {
   padding-left: 0;
   list-style: none;

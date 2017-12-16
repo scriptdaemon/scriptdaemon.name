@@ -10,12 +10,22 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ]
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader'
       }
     ]
   },
   resolve: {
+    alias: {
+      bulma$: 'bulma/css/bulma.css'
+    },
     extensions: [
       '*',
       '.js',
