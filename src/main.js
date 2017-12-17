@@ -11,6 +11,7 @@ Vue.use(VueRouter)
 const app = new Vue({
   render: h => h(App),
   router: new VueRouter({
+    linkActiveClass: 'is-active',
     routes: [
       { path: '/page1', component: Page1, meta: { index: 0 } },
       { path: '/page2', component: Page2, meta: { index: 1 } },

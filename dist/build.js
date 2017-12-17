@@ -496,6 +496,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */].use(__WEBPACK_IMPORTED_MODU
 const app = new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */]({
   render: h => h(__WEBPACK_IMPORTED_MODULE_2__app__["a" /* default */]),
   router: new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
+    linkActiveClass: 'is-active',
     routes: [
       { path: '/page1', component: __WEBPACK_IMPORTED_MODULE_3__pages_page1__["a" /* default */], meta: { index: 0 } },
       { path: '/page2', component: __WEBPACK_IMPORTED_MODULE_4__pages_page2__["a" /* default */], meta: { index: 1 } },
@@ -11351,7 +11352,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 exports.i(__webpack_require__(12), "");
 
 // module
-exports.push([module.i, "\n.list-inline {\n  padding-left: 0;\n  list-style: none;\n}\n.list-inline-item {\n  display: inline-block;\n}\n.list-inline-item:not(:last-child)::after {\n  padding-right: .5em;\n  padding-left: .5em;\n  content: '/';\n}\n.router-link-active {\n  text-decoration: underline;\n}\n.slide {\n  position: absolute;\n  transition: 1s;\n}\n.slide-right-enter,\n.slide-right-leave-to,\n.slide-left-enter,\n.slide-left-leave-to {\n  opacity: 0;\n}\n.slide-right-enter,\n.slide-left-leave-to {\n  transform: translate(-100%, 0);\n}\n.slide-right-leave-to,\n.slide-left-enter {\n  transform: translate(100%, 0);\n}\n", ""]);
+exports.push([module.i, "\n.slide {\n  position: absolute;\n  transition: 1s;\n}\n.slide-right-enter,\n.slide-right-leave-to,\n.slide-left-enter,\n.slide-left-leave-to {\n  opacity: 0;\n}\n.slide-right-enter,\n.slide-left-leave-to {\n  transform: translate(-100%, 0);\n}\n.slide-right-leave-to,\n.slide-left-enter {\n  transform: translate(100%, 0);\n}\n", ""]);
 
 // exports
 
@@ -11650,13 +11651,6 @@ module.exports = function listToStyles (parentId, list) {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: 'App',
@@ -11691,41 +11685,24 @@ var render = function() {
       _c("header", [
         _c("h1", [_vm._v("@scriptdaemon")]),
         _vm._v(" "),
-        _c("nav", [
-          _c("ul", { staticClass: "list-inline" }, [
-            _c(
-              "li",
-              { staticClass: "list-inline-item" },
-              [
-                _c("router-link", { attrs: { to: "/page1" } }, [
-                  _vm._v("Page 1")
-                ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "list-inline-item" },
-              [
-                _c("router-link", { attrs: { to: "/page2" } }, [
-                  _vm._v("Page 2")
-                ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "list-inline-item" },
-              [
-                _c("router-link", { attrs: { to: "/page3" } }, [
-                  _vm._v("Page 3")
-                ])
-              ],
-              1
-            )
-          ])
+        _c("nav", { staticClass: "tabs" }, [
+          _c(
+            "ul",
+            [
+              _c("router-link", { attrs: { tag: "li", to: "/page1" } }, [
+                _c("a", [_vm._v("Page 1")])
+              ]),
+              _vm._v(" "),
+              _c("router-link", { attrs: { tag: "li", to: "/page2" } }, [
+                _c("a", [_vm._v("Page 2")])
+              ]),
+              _vm._v(" "),
+              _c("router-link", { attrs: { tag: "li", to: "/page3" } }, [
+                _c("a", [_vm._v("Page 3")])
+              ])
+            ],
+            1
+          )
         ])
       ]),
       _vm._v(" "),

@@ -2,25 +2,18 @@
   <div id="app">
     <header>
       <h1>@scriptdaemon</h1>
-      <nav>
-        <!-- Use router-link components for navigation. -->
-        <!-- `<router-link>` will be rendered as an `<a>` tag by default. -->
-        <ul class="list-inline">
-          <li class="list-inline-item">
-            <router-link to="/page1">Page 1</router-link>
-          </li>
-          <li class="list-inline-item">
-            <router-link to="/page2">Page 2</router-link>
-          </li>
-          <li class="list-inline-item">
-            <router-link to="/page3">Page 3</router-link>
-          </li>
+      <nav class="tabs">
+        <ul>
+          <!-- Use router-link components for navigation. -->
+          <router-link tag="li" to="/page1"><a>Page 1</a></router-link>
+          <router-link tag="li" to="/page2"><a>Page 2</a></router-link>
+          <router-link tag="li" to="/page3"><a>Page 3</a></router-link>
         </ul>
       </nav>
     </header>
 
-    <!-- Route outlet: component matched by the route will render here. -->
     <transition :name="transition">
+      <!-- Route outlet: component matched by the route will render here. -->
       <router-view/>
     </transition>
   </div>
@@ -46,25 +39,6 @@ export default {
 
 <style>
 @import '~bulma';
-
-.list-inline {
-  padding-left: 0;
-  list-style: none;
-}
-
-.list-inline-item {
-  display: inline-block;
-}
-
-.list-inline-item:not(:last-child)::after {
-  padding-right: .5em;
-  padding-left: .5em;
-  content: '/';
-}
-
-.router-link-active {
-  text-decoration: underline;
-}
 
 .slide {
   position: absolute;
