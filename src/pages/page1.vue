@@ -1,6 +1,6 @@
 <template>
   <section class="slide">
-    <h2>Page 1</h2>
+    <h2>Work in Progress</h2>
   </section>
 </template>
 

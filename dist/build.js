@@ -11812,7 +11812,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("section", { staticClass: "slide" }, [
-      _c("h2", [_vm._v("Page 1")])
+      _c("h2", [_vm._v("Work in Progress")])
     ])
   }
 ]
@@ -11911,7 +11911,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("section", { staticClass: "slide" }, [
-      _c("h2", [_vm._v("Page 2")])
+      _c("h2", [_vm._v("Work in Progress")])
     ])
   }
 ]
@@ -12010,7 +12010,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("section", { staticClass: "slide" }, [
-      _c("h2", [_vm._v("Page 3")])
+      _c("h2", [_vm._v("Work in Progress")])
     ])
   }
 ]
