@@ -2,23 +2,33 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './app'
 
+// Pages (route components)
 import Page1 from './pages/page1'
 import Page2 from './pages/page2'
 import Page3 from './pages/page3'
 
 Vue.use(VueRouter)
 
+const router = new VueRouter({
+  // Use Bulma's `is-active` modifier class for active router links
+  linkActiveClass: 'is-active',
+  routes: [
+    { path: '/page1', component: Page1, meta: Page1.meta },
+    { path: '/page2', component: Page2, meta: Page2.meta },
+    { path: '/page3', component: Page3, meta: Page3.meta },
+    { path: '*', redirect: '/page1' }
+  ]
+})
+
+router.afterEach((to, from) => {
+  document.title = to.meta && to.meta.title
+    ? `@scriptdaemon / ${to.meta.title}`
+    : '@scriptdaemon'
+})
+
 const app = new Vue({
   render: h => h(App),
-  router: new VueRouter({
-    linkActiveClass: 'is-active',
-    routes: [
-      { path: '/page1', component: Page1, meta: { index: 0 } },
-      { path: '/page2', component: Page2, meta: { index: 1 } },
-      { path: '/page3', component: Page3, meta: { index: 2 } },
-      { path: '*', redirect: '/page1' }
-    ]
-  })
+  router
 })
 
 // This is only to keep the linter happy. If I use the `el` property, then I'd

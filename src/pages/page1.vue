@@ -6,6 +6,10 @@
 
 <script>
 export default {
-  name: 'Page1'
+  name: 'Page1',
+  meta: {
+    index: 0,
+    title: 'Page 1'
+  }
 }
 </script>

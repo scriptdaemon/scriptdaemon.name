@@ -487,23 +487,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+// Pages (route components)
 
 
 
 
 __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */].use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */])
 
+const router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
+  // Use Bulma's `is-active` modifier class for active router links
+  linkActiveClass: 'is-active',
+  routes: [
+    { path: '/page1', component: __WEBPACK_IMPORTED_MODULE_3__pages_page1__["a" /* default */], meta: __WEBPACK_IMPORTED_MODULE_3__pages_page1__["a" /* default */].meta },
+    { path: '/page2', component: __WEBPACK_IMPORTED_MODULE_4__pages_page2__["a" /* default */], meta: __WEBPACK_IMPORTED_MODULE_4__pages_page2__["a" /* default */].meta },
+    { path: '/page3', component: __WEBPACK_IMPORTED_MODULE_5__pages_page3__["a" /* default */], meta: __WEBPACK_IMPORTED_MODULE_5__pages_page3__["a" /* default */].meta },
+    { path: '*', redirect: '/page1' }
+  ]
+})
+
+router.afterEach((to, from) => {
+  document.title = to.meta && to.meta.title
+    ? `@scriptdaemon / ${to.meta.title}`
+    : '@scriptdaemon'
+})
+
 const app = new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */]({
   render: h => h(__WEBPACK_IMPORTED_MODULE_2__app__["a" /* default */]),
-  router: new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
-    linkActiveClass: 'is-active',
-    routes: [
-      { path: '/page1', component: __WEBPACK_IMPORTED_MODULE_3__pages_page1__["a" /* default */], meta: { index: 0 } },
-      { path: '/page2', component: __WEBPACK_IMPORTED_MODULE_4__pages_page2__["a" /* default */], meta: { index: 1 } },
-      { path: '/page3', component: __WEBPACK_IMPORTED_MODULE_5__pages_page3__["a" /* default */], meta: { index: 2 } },
-      { path: '*', redirect: '/page1' }
-    ]
-  })
+  router
 })
 
 // This is only to keep the linter happy. If I use the `el` property, then I'd
@@ -11791,7 +11801,11 @@ if (false) {(function () {
 //
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  name: 'Page1'
+  name: 'Page1',
+  meta: {
+    index: 0,
+    title: 'Page 1'
+  }
 });
 
 
@@ -11890,7 +11904,11 @@ if (false) {(function () {
 //
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  name: 'Page2'
+  name: 'Page2',
+  meta: {
+    index: 1,
+    title: 'Page 2'
+  }
 });
 
 
@@ -11989,7 +12007,11 @@ if (false) {(function () {
 //
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  name: 'Page3'
+  name: 'Page3',
+  meta: {
+    index: 2,
+    title: 'Page 3'
+  }
 });
 
 
