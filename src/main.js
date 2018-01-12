@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Vuetify from 'vuetify'
+
+// Main app component
 import App from './app'
 
 // Pages (route components)
@@ -8,10 +11,9 @@ import Page2 from './pages/page2'
 import Page3 from './pages/page3'
 
 Vue.use(VueRouter)
+Vue.use(Vuetify)
 
 const router = new VueRouter({
-  // Use Bulma's `is-active` modifier class for active router links
-  linkActiveClass: 'is-active',
   routes: [
     { path: '/page1', component: Page1, meta: Page1.meta },
     { path: '/page2', component: Page2, meta: Page2.meta },
@@ -26,7 +28,7 @@ router.afterEach((to, from) => {
     : '@scriptdaemon'
 })
 
-const app = new Vue({
+const vm = new Vue({
   render: h => h(App),
   router
 })
@@ -35,4 +37,4 @@ const app = new Vue({
 // get either one of two linting errors: `no-new` if I don't assign the root Vue
 // instance to a variable, or `no-unused-vars` if I set it to a variable but
 // don't use it.
-app.$mount('#app')
+vm.$mount('#app')

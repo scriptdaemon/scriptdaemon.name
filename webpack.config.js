@@ -16,9 +16,6 @@ module.exports = {
     ]
   },
   resolve: {
-    alias: {
-      bulma$: 'bulma/css/bulma.css'
-    },
     extensions: [
       '*',
       '.js',

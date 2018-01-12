@@ -1,22 +1,23 @@
 <template>
-  <div id="app">
-    <header>
-      <h1>@scriptdaemon</h1>
-      <nav class="tabs">
-        <ul>
-          <!-- Use router-link components for navigation. -->
-          <router-link tag="li" to="/page1"><a>Page 1</a></router-link>
-          <router-link tag="li" to="/page2"><a>Page 2</a></router-link>
-          <router-link tag="li" to="/page3"><a>Page 3</a></router-link>
-        </ul>
-      </nav>
-    </header>
-
-    <transition :name="transition">
-      <!-- Route outlet: component matched by the route will render here. -->
-      <router-view/>
-    </transition>
-  </div>
+  <v-app>
+    <v-toolbar app tabs>
+      <v-toolbar-title>
+        <h1 class="display-1">@scriptdaemon</h1>
+      </v-toolbar-title>
+      <v-tabs grow slot="extension">
+        <v-tab to="/page1">Page 1</v-tab>
+        <v-tab to="/page2">Page 2</v-tab>
+        <v-tab to="/page3">Page 3</v-tab>
+      </v-tabs>
+    </v-toolbar>
+    <v-content>
+      <v-container class="slide-container">
+        <transition :name="transition">
+          <router-view/>
+        </transition>
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
@@ -38,9 +39,16 @@ export default {
 </script>
 
 <style>
-@import '~bulma';
+@import '~vuetify/dist/vuetify.min.css';
 
-.slide {
+.slide-container {
+  position: relative;
+}
+
+.slide-right-enter-active,
+.slide-right-leave-active,
+.slide-left-enter-active,
+.slide-left-leave-active {
   position: absolute;
   transition: 1s;
 }
