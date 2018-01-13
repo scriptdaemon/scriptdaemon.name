@@ -22,10 +22,11 @@ const router = new VueRouter({
   ]
 })
 
+const title = document.title
 router.afterEach((to, from) => {
   document.title = to.meta && to.meta.title
-    ? `@scriptdaemon / ${to.meta.title}`
-    : '@scriptdaemon'
+    ? `${title} / ${to.meta.title}`
+    : title
 })
 
 const vm = new Vue({

@@ -509,10 +509,11 @@ const router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
   ]
 })
 
+const title = document.title
 router.afterEach((to, from) => {
   document.title = to.meta && to.meta.title
-    ? `@scriptdaemon / ${to.meta.title}`
-    : '@scriptdaemon'
+    ? `${title} / ${to.meta.title}`
+    : title
 })
 
 const vm = new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */]({
