@@ -5,7 +5,7 @@
   "homepage": "http://scriptdaemon.me",
   "bugs": "https://github.com/scriptdaemon/scriptdaemon.github.io/issues",
   "license": "ISC",
-  "author": "Kenneth Williams",
+  "author": "Kenneth Williams <scriptdaemon@gmail.com>",
   "repository": "scriptdaemon/scriptdaemon.github.io",
   "scripts": {
     "build": "webpack --progress",
