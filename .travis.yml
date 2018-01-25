@@ -4,9 +4,6 @@ node_js:
   - "8" # LTS
   - "6" # LTS
 
-os:
-  - linux
-
 branches:
   only:
     - master
