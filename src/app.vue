@@ -11,8 +11,8 @@
       </v-tabs>
     </v-toolbar>
     <v-content>
-      <v-container class="slide-container">
-        <transition :name="transition">
+      <v-container>
+        <transition mode="out-in" :name="transition">
           <router-view/>
         </transition>
       </v-container>
@@ -41,16 +41,14 @@ export default {
 <style>
 @import '~vuetify/dist/vuetify.min.css';
 
-.slide-container {
-  position: relative;
+.slide-right-enter-active,
+.slide-left-enter-active {
+  transition: 250ms ease-out;
 }
 
-.slide-right-enter-active,
 .slide-right-leave-active,
-.slide-left-enter-active,
 .slide-left-leave-active {
-  position: absolute;
-  transition: 1s;
+  transition: 250ms ease-in;
 }
 
 .slide-right-enter,

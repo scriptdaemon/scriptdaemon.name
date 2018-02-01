@@ -32496,7 +32496,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 exports.i(__webpack_require__(13), "");
 
 // module
-exports.push([module.i, "\n.slide-container {\n  position: relative;\n}\n.slide-right-enter-active,\n.slide-right-leave-active,\n.slide-left-enter-active,\n.slide-left-leave-active {\n  position: absolute;\n  transition: 1s;\n}\n.slide-right-enter,\n.slide-right-leave-to,\n.slide-left-enter,\n.slide-left-leave-to {\n  opacity: 0;\n}\n.slide-right-enter,\n.slide-left-leave-to {\n  transform: translate(-100%, 0);\n}\n.slide-right-leave-to,\n.slide-left-enter {\n  transform: translate(100%, 0);\n}\n", ""]);
+exports.push([module.i, "\n.slide-right-enter-active,\n.slide-left-enter-active {\n  transition: 250ms ease-out;\n}\n.slide-right-leave-active,\n.slide-left-leave-active {\n  transition: 250ms ease-in;\n}\n.slide-right-enter,\n.slide-right-leave-to,\n.slide-left-enter,\n.slide-left-leave-to {\n  opacity: 0;\n}\n.slide-right-enter,\n.slide-left-leave-to {\n  transform: translate(-100%, 0);\n}\n.slide-right-leave-to,\n.slide-left-enter {\n  transform: translate(100%, 0);\n}\n", ""]);
 
 // exports
 
@@ -32855,11 +32855,10 @@ var render = function() {
         [
           _c(
             "v-container",
-            { staticClass: "slide-container" },
             [
               _c(
                 "transition",
-                { attrs: { name: _vm.transition } },
+                { attrs: { mode: "out-in", name: _vm.transition } },
                 [_c("router-view")],
                 1
               )
