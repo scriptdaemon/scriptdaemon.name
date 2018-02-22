@@ -5,9 +5,9 @@
         <h1 class="display-1">@scriptdaemon</h1>
       </v-toolbar-title>
       <v-tabs grow slot="extension">
-        <v-tab to="/page1">Page 1</v-tab>
-        <v-tab to="/page2">Page 2</v-tab>
-        <v-tab to="/page3">Page 3</v-tab>
+        <v-tab :to="{ name: 'page1' }">Page 1</v-tab>
+        <v-tab :to="{ name: 'page2' }">Page 2</v-tab>
+        <v-tab :to="{ name: 'page3' }">Page 3</v-tab>
       </v-tabs>
     </v-toolbar>
     <v-content>
@@ -25,6 +25,7 @@ export default {
   name: 'App',
   data () {
     return {
+      activeTab: 'page1',
       transition: 'slide-left'
     }
   },

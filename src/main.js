@@ -15,9 +15,9 @@ Vue.use(Vuetify)
 
 const router = new VueRouter({
   routes: [
-    { path: '/page1', component: Page1, meta: Page1.meta },
-    { path: '/page2', component: Page2, meta: Page2.meta },
-    { path: '/page3', component: Page3, meta: Page3.meta },
+    { name: 'page1', path: '/page1', component: Page1, meta: Page1.meta },
+    { name: 'page2', path: '/page2', component: Page2, meta: Page2.meta },
+    { name: 'page3', path: '/page3', component: Page3, meta: Page3.meta },
     { path: '*', redirect: '/page1' }
   ]
 })
