@@ -25,7 +25,6 @@ export default {
   name: 'App',
   data () {
     return {
-      activeTab: 'page1',
       transition: 'slide-left'
     }
   },
