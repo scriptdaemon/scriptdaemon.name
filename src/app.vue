@@ -4,7 +4,7 @@
       <v-toolbar-title>
         <h1 class="display-1">@scriptdaemon</h1>
       </v-toolbar-title>
-      <v-tabs grow slot="extension">
+      <v-tabs slot="extension" grow>
         <v-tab :to="{ name: 'page1' }">Page 1</v-tab>
         <v-tab :to="{ name: 'page2' }">Page 2</v-tab>
         <v-tab :to="{ name: 'page3' }">Page 3</v-tab>
@@ -12,7 +12,7 @@
     </v-toolbar>
     <v-content>
       <v-container>
-        <transition mode="out-in" :name="transition">
+        <transition :name="transition" mode="out-in">
           <router-view/>
         </transition>
       </v-container>

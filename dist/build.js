@@ -29437,7 +29437,7 @@ var render = function() {
             [
               _c(
                 "transition",
-                { attrs: { mode: "out-in", name: _vm.transition } },
+                { attrs: { name: _vm.transition, mode: "out-in" } },
                 [_c("router-view")],
                 1
               )
