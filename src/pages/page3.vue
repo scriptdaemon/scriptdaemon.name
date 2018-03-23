@@ -1,7 +1,7 @@
 <template>
   <v-layout>
     <v-flex xs12>
-      <h2>Work in Progress.</h2>
+      <h2>Work in Progress</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum maiores
         modi quidem veniam, expedita quis laboriosam, ullam facere adipisci,

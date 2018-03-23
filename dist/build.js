@@ -29724,7 +29724,7 @@ var render = function() {
     "v-layout",
     [
       _c("v-flex", { attrs: { xs12: "" } }, [
-        _c("h2", [_vm._v("Work in Progress.")]),
+        _c("h2", [_vm._v("Work in Progress")]),
         _vm._v(" "),
         _c("p", [
           _vm._v(
