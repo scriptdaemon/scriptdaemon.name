@@ -22,6 +22,7 @@ deploy:
   fqdn: scriptdaemon.me
   on:
     branch: development
+    node: "10"
 
 notifications:
   email: false
