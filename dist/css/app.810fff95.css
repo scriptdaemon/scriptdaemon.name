@@ -1,0 +1,1 @@
+.slide-left-enter-active,.slide-right-enter-active{transition:.25s ease-out}.slide-left-leave-active,.slide-right-leave-active{transition:.25s ease-in}.slide-left-enter,.slide-left-leave-to,.slide-right-enter,.slide-right-leave-to{opacity:0}.slide-left-leave-to,.slide-right-enter{transform:translate(-100%)}.slide-left-enter,.slide-right-leave-to{transform:translate(100%)}
