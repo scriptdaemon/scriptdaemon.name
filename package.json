@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@scriptdaemon/eslint-config": "^2.1.0",
-    "@vue/cli-plugin-eslint": "^3.0.2",
+    "@vue/cli-plugin-eslint": "^4.2.3",
     "@vue/cli-service": "^3.0.2",
     "vue-template-compiler": "^2.5.17"
   },
